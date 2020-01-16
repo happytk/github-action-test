@@ -1,5 +1,8 @@
 from django.test import TestCase
+from helloapp.models import TestModel
+import pytest
 
-# Create your tests here.
+
+@pytest.mark.django_db
 def test_helloworld():
-    assert 1==1
+    assert TestModel.objects.count() == 0
